@@ -1,18 +1,8 @@
-<!-- resources/views/users/index.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuários</title>
-    <!-- Adicione aqui o seu framework CSS (Bootstrap, Tailwind, etc.) -->
-</head>
-<body>
-    <div class="container mt-5">
-        <h1>Usuários Cadastrados</h1>
+@section('title', 'Usuarios')
 
-        <!-- Verificação se a lista de usuários está vazia -->
+@section('content')
         @if($users->isEmpty())
             <p>Nenhum usuário cadastrado.</p>
         @else
@@ -52,6 +42,4 @@
         @endif
 
         <a href="{{ route('users.create') }}" class="btn btn-success">Cadastrar Novo Usuário</a>
-    </div>
-</body>
-</html>
+@endsection

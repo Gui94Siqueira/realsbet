@@ -8,48 +8,48 @@ use Illuminate\Http\Request;
 
 class AffiliateCommissionController extends Controller
 {
-    // Método para adicionar uma comissão ao afiliado
     public function create($affiliateId)
     {
         $affiliate = Affiliate::findOrFail($affiliateId);
         return view('affiliate_commissions.create', compact('affiliate'));
     }
 
-    // Método para salvar a comissão
+
     public function store(Request $request, $affiliateId)
-    {
-        $validated = $request->validate([
-            'value' => 'required|numeric',
-            'date' => 'required|date',
-            'observations' => 'nullable|string|max:255',
-        ]);
+{
+    $validated = $request->validate([
+        'value' => 'required|numeric',
+        'date' => 'required|date',
+        'observations' => 'nullable|string|max:255',
+    ]);
 
-        AffiliateCommission::create([
-            'affiliate_id' => $affiliateId,
-            'value' => $validated['value'],
-            'date' => $validated['date'],
-            'observations' => $validated['observations'],
-        ]);
+    AffiliateCommission::create([
+        'affiliate_id' => $affiliateId,
+        'value' => $validated['value'],
+        'date' => $validated['date']
+    ]);
 
-        return redirect()->route('affiliates.index');
-    }
-
-    // Método para excluir a comissão
-    public function destroy($id)
-    {
-        $commission = AffiliateCommission::findOrFail($id);
-        $commission->delete();
-
-        return redirect()->route('affiliates.index');
-    }
-
-    // Método para visualizar a comissão de um afiliado
-    public function show($affiliateId)
-    {
-        $affiliate = Affiliate::findOrFail($affiliateId);
-        $commissions = AffiliateCommission::where('affiliate_id', $affiliateId)->get();
-
-        return view('affiliate_commissions.show', compact('affiliate', 'commissions'));
-    }
+    return redirect()->route('affiliate_commissions.show', $affiliateId);
 }
 
+    // Method to delete a commission
+    public function destroy($id)
+    {
+        // Find the commission by ID, or fail if not found
+        $commission = AffiliateCommission::findOrFail($id);
+
+        // Delete the commission
+        $commission->delete();
+
+        // Redirect back to the affiliates list or commissions page
+        return redirect()->route('affiliates.index');
+    }
+
+    public function show($affiliateId)
+{
+    $affiliate = Affiliate::findOrFail($affiliateId);
+    $commissions = AffiliateCommission::where('affiliate_id', $affiliateId)->get();
+    return view('affiliate_commissions.show', compact('affiliate', 'commissions'));
+}
+
+}

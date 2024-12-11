@@ -14,7 +14,6 @@ class AffiliateCommission extends Model
         'affiliate_id', // ID do afiliado
         'value',        // Valor da comissão
         'date',         // Data da comissão
-        'observations', // Observações sobre a comissão
     ];
 
     /**

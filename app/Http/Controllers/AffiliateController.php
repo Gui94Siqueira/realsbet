@@ -51,7 +51,7 @@ class AffiliateController extends Controller
     public function edit($id)
     {
         $affiliate = Affiliate::findOrFail($id);
-        return view('affiliates.edit', compact('affiliate'));
+        return view('affiliates.create', compact('affiliate'));
     }
 
     // Método para atualizar as informações de um afiliado

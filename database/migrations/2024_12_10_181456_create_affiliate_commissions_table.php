@@ -13,7 +13,6 @@ class CreateAffiliateCommissionsTable extends Migration
             $table->foreignId('affiliate_id')->constrained('affiliates')->onDelete('cascade');
             $table->decimal('value', 10, 2);
             $table->date('date');
-            $table->text('observations')->nullable();
             $table->timestamps();
         });
     }
