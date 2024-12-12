@@ -12,7 +12,7 @@
 
         <div class="row">
             @foreach($affiliates as $affiliate)
-                <div class="col-md-4 mb-4 text-black">
+                <div class="col mb-4 text-black">
                     <div class="card">
                         <div class="card-header d-flex justify-center">
                             <h5 class="card-title">{{ $affiliate->name }}</h5>

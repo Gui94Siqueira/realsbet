@@ -3,7 +3,7 @@
     <div class="flex h-20 px-8 justify-between items-center bg-neutral-800 border-b border-b-neutral-700">
         <ul>
             <li>
-                <a href="{{ route('affiliates.index') }}" class="text-white text-2xl font-mono font-base">Afiliados</a>
+                <a href="{{ route('home') }}" class="text-white text-2xl font-mono font-base">Afiliados</a>
             </li>
         </ul>
 
