@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class AffiliateController extends Controller
 {
-    // Método para listar todos os afiliados
+
     public function index()
     {
-        $affiliates = Affiliate::all(); // Recupera todos os afiliados
+        $affiliates = Affiliate::all();
         return view('affiliates.index', compact('affiliates'));  // Retorna a view com a lista de afiliados
     }
 
-    // Método para exibir o formulário de criação de afiliado
+
     public function create()
     {
         return view('affiliates.create');
@@ -32,7 +32,7 @@ class AffiliateController extends Controller
         'state' => 'required|string|max:2',
     ]);
 
-    // O Laravel irá automaticamente preencher created_at e updated_at
+
     Affiliate::create([
         'name' => $validated['name'],
         'cpf' => $validated['cpf'],
@@ -47,14 +47,14 @@ class AffiliateController extends Controller
 }
 
 
-    // Método para exibir o formulário de edição de afiliado
+
     public function edit($id)
     {
-        $affiliate = Affiliate::findOrFail($id);
-        return view('affiliates.create', compact('affiliate'));
+        $affiliate = Affiliate::find($id);
+        return view('affiliates.edit', compact('affiliate'));
     }
 
-    // Método para atualizar as informações de um afiliado
+
     public function update(Request $request, $id)
 {
     $validated = $request->validate([
@@ -82,15 +82,8 @@ class AffiliateController extends Controller
 
 public function destroy($id)
 {
-
-    // Recupera o usuário a ser excluído
     $user = Affiliate::findOrFail($id);
-
-    // Exclui o usuário
     $user->delete();
-
-
-
     return redirect()->route('affiliates.index'); // Redireciona de volta para a lista de afiliados
 }
 

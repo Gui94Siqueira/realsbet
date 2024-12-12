@@ -14,10 +14,6 @@
             </li>
 
             <li class="hover:text-gray-300">
-                <a href="{{ route('affiliate_commissions.index') }}" >Comissões</a>
-            </li>
-
-            <li class="hover:text-gray-300">
                 <a href="{{ route('users.index') }}">Usuários</a>
             </li>
         </ul>

@@ -6,7 +6,7 @@
         @if($users->isEmpty())
             <p>Nenhum usuário cadastrado.</p>
         @else
-            <table class="table">
+            <table class="table text-slate-100">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -41,5 +41,5 @@
             </table>
         @endif
 
-        <a href="{{ route('users.create') }}" class="btn btn-success">Cadastrar Novo Usuário</a>
+        <a href="{{ route('users.create') }}" class="flex justify-center bg-green-700 hover:bg-green-600 py-2 mt-4 rounded-lg">Cadastrar Novo Usuário</a>
 @endsection

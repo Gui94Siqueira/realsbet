@@ -14,8 +14,6 @@ class HomeController extends Controller
         $totalAffiliates = Affiliate::count();
         $totalCommissions = AffiliateCommission::count();
         $totalUsers = User::count();
-
-    
         return view('home', compact('totalAffiliates', 'totalCommissions', 'totalUsers'));
     }
 }

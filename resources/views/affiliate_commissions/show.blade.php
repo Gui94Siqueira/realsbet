@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div>
-        <h2>comissões para Afiliados: {{ $affiliate->name }}</h2>
+        <h2>Comissões para Afiliado: {{ $affiliate->name }}</h2>
 
     <table class="w-full mt-8 ">
         <thead class="text-center">

@@ -9,17 +9,13 @@ class AffiliateCommission extends Model
 {
     use HasFactory;
 
-    // Campos que podem ser preenchidos via atribuição em massa
     protected $fillable = [
-        'affiliate_id', // ID do afiliado
-        'value',        // Valor da comissão
-        'date',         // Data da comissão
+        'affiliate_id',
+        'value',
+        'date',
     ];
 
-    /**
-     * Define o relacionamento com o modelo Affiliate.
-     * Cada comissão pertence a um afiliado.
-     */
+
     public function affiliate()
     {
         return $this->belongsTo(Affiliate::class);

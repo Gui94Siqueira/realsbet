@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "626b9e7ddd47fb7eff9aaa53cce0c9ad",
+    "content-hash": "83a7bcdceff12713b7f066ac8f6cab8a",
     "packages": [
+        {
+            "name": "alerrandro/validador-e-regex",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alerrandro1999/alerrandro-validador-e-regex.git",
+                "reference": "ea1dede61168ad0eb25bd4050c863b010d2a4eb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alerrandro1999/alerrandro-validador-e-regex/zipball/ea1dede61168ad0eb25bd4050c863b010d2a4eb7",
+                "reference": "ea1dede61168ad0eb25bd4050c863b010d2a4eb7",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alerrandro\\Regex\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "alerrandro borges",
+                    "email": "alerrandrokaton@gmail.com"
+                }
+            ],
+            "description": "Pacote com validador CPF/CNPJ e alguns regex",
+            "support": {
+                "issues": "https://github.com/alerrandro1999/alerrandro-validador-e-regex/issues",
+                "source": "https://github.com/alerrandro1999/alerrandro-validador-e-regex/tree/1.10.0"
+            },
+            "time": "2023-05-03T18:24:04+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
